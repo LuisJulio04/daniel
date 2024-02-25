@@ -1,18 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" >
+
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Personal Webpage</title>
+  
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111" />
+
+
+
+  
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+
+  <title>Luis Daniel Torres Sanchez</title>
+
+    <link rel="canonical" href="https://codepen.io/SquishyAndroid/pen/XjRPVV">
   <title>BRADENGELHARDT</title>
   <meta name="description" content="Web designer and front-end developer">
   <link href='https://fonts.googleapis.com/css?family=Raleway:100,200,400,600' rel='stylesheet' type='text/css'>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'><link rel="stylesheet" href="./style.css">
 
- <style>
-  /* general styles */
+  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
+  
+<style>
+/* general styles */
 
 body {
   font-family: "Raleway", sans-serif !important;
@@ -213,7 +234,7 @@ p {
 .opaque-bg {
   margin-left: auto;
   margin-right: auto;
-  max-width: 800px;
+  max-width: 380px;
   padding: 1px 1px 5px 5px;
 }
 
@@ -612,6 +633,111 @@ label {
   animation-delay: -0.8s;
 }
 
+
+:root{
+  --background-dark: #2d3548;
+  --text-light: rgba(255,255,255,0.6);
+  --text-lighter: rgba(255,255,255,0.9);
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 64px;
+  --width-container: 1200px;
+}
+
+.hero-section{
+  align-items: flex-start;
+  background-image: linear-gradient(15deg, #0f4667 0%, #2a6973 150%);
+  display: flex;
+  min-height: 100%;
+  justify-content: center;
+  padding: var(--spacing-xxl) var(--spacing-l);
+}
+
+.card-grid{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: var(--spacing-l);
+  grid-row-gap: var(--spacing-l);
+  max-width: var(--width-container);
+  width: 100%;
+}
+
+
+@media(min-width: 540px){
+  .card-grid{
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media(min-width: 960px){
+  .card-grid{
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
+
+
+.card{
+  list-style: none;
+  position: relative;
+}
+
+
+.card:before{
+  content: '';
+  display: block;
+  padding-bottom: 150%;
+  width: 100%;
+}
+
+.card__background{
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--spacing-l);
+  bottom: 0;
+  filter: brightness(0.75) saturate(1.2) contrast(0.85);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: center;
+  trsnsform: scale(1) translateZ(0);
+  transition: 
+    filter 200ms linear,
+    transform 200ms linear;
+}
+
+.card:hover .card__background{
+  transform: scale(1.05) translateZ(0);
+}
+
+.card-grid:hover > .card:not(:hover) .card__background{
+  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+}
+
+.card__content{
+  left: 0;
+  padding: var(--spacing-l);
+  position: absolute;
+  top: 0;
+}
+
+.card__category{
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-s);
+  text-transform: uppercase;
+}
+
+.card__heading{
+  color: var(--text-lighter);
+  font-size: 1.9rem;
+  text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+  line-height: 1.4;
+  word-spacing: 100vw;
+}
+
 @-webkit-keyframes sk-stretchdelay {
   0%,
   40%,
@@ -648,17 +774,15 @@ label {
   animation: 1s blink step-end infinite;
 }
 
-
-
-@keyframes blink {
-  from, to {
+@keyframes "blink" {
+  from,
+  to {
     color: transparent;
   }
   50% {
     color: white;
   }
 }
-
 
 @-moz-keyframes blink {
   from,
@@ -670,7 +794,7 @@ label {
   }
 }
 
-@-webkit-keyframes blink {
+@-webkit-keyframes "blink" {
   from,
   to {
     color: transparent;
@@ -680,7 +804,7 @@ label {
   }
 }
 
-@-ms-keyframes blink {
+@-ms-keyframes "blink" {
   from,
   to {
     color: transparent;
@@ -690,7 +814,7 @@ label {
   }
 }
 
-@-o-keyframes blink {
+@-o-keyframes "blink" {
   from,
   to {
     color: transparent;
@@ -724,8 +848,17 @@ label {
   border-radius: 4px;
 }
 </style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
 </head>
-<body>
+
+<body translate="no">
+  <body>
   <!-- navbar header -->
   <div class="nav-header">
     <div class="nav-brand">
@@ -734,8 +867,7 @@ label {
     <i class="fa fa-bars fa-3x"></i>
     <div class="header-links">
       <ul>
-        <li data-menuanchor="fourthPage"><a href="#contact">CONTACT</a></li>
-        <li data-menuanchor="thirdPage"><a href="#portfolio">PORTFOLIO</a></li>
+        <li data-menuanchor="secondPage"><a href="#projects">PROJECTS</a></li>
         <li data-menuanchor="secondPage"><a href="#about">ABOUT</a></li>
       </ul>
     </div>
@@ -748,9 +880,8 @@ label {
     <div class="nav-container">
       <div class="nav-links">
         <ul id='myMenu'>
-          <li data-menuanchor="secondPage"><a href="#about">ABOUT</a></li>
-          <li data-menuanchor="thirdPage"><a href="#portfolio">PORTFOLIO</a></li>
-          <li data-menuanchor="fourthPage"><a href="#contact">CONTACT</a></li>
+          <li data-menuanchor="secondPage"><a href="#projects">ABOUT</a></li>
+          <li data-menuanchor="secondPage"><a href="#about">PROJECTS</a></li>
         </ul>
       </div>
     </div>
@@ -765,7 +896,7 @@ label {
 
     <div class="section aboutme" data-anchor="aboutme">
       <div class="opaque-bg animated fadeInDown">
-        <h1 style="color:white">LUIS DANIEL<span style="color:#FF6363">/</span>TORRES SANCHEZ</h1>
+        <h1 style="color:white">LUIS DANIEL TORRES SANCHEZ</h1>
         <p><span id="holder"></span><span class="blinking-cursor">|</span></p>
       </div>
       <i id="moveDown" class="fa fa-chevron-down fa-3x bounce"></i>
@@ -777,90 +908,88 @@ label {
     <div class="section" data-anchor="skills">
       <div class="content">
         <h1 class="wow fadeInDown" data-wow-delay="0.2s">ABOUT ME</h1>
-        <p class="wow fadeInDown" data-wow-delay="0.2s">Hi, I'm Daniel Torres, TIC's engineer, dedicated to UX/UI design, focused on creating clean, responsive and focused on the needs of the project.</p>
+        <p class="wow fadeInDown" data-wow-delay="0.2s">Hi, I'm Daniel Torres, TIC's engineer, dedicated to UX/UI design, focused on creating clean, responsive and focused on
+            the needs of the project.</p>
 
         <div class=" wow fadeInUp container-skillbar" data-wow-delay="0.2s">
           <div class="skillbar clearfix " data-percent="90%">
-            <div class="skillbar-title" style="background: #DD1E2F;"><span>Ilustrador</span></div>
+            <div class="skillbar-title" style="background: #DD1E2F;"><span>HTML5</span></div>
             <div class="skillbar-bar" style="background: #DD1E2F;"></div>
             <div class="skill-bar-percent">90%</div>
           </div> <!-- End Skill Bar -->
 
           <div class="skillbar clearfix " data-percent="80%">
-            <div class="skillbar-title" style="background: #EBB035;"><span>Photoshop</span></div>
+            <div class="skillbar-title" style="background: #EBB035;"><span>CSS3</span></div>
             <div class="skillbar-bar" style="background: #EBB035;"></div>
             <div class="skill-bar-percent">80%</div>
           </div> <!-- End Skill Bar -->
 
           <div class="skillbar clearfix " data-percent="75%">
-            <div class="skillbar-title" style="background: #218559;"><span>Figma</span></div>
+            <div class="skillbar-title" style="background: #218559;"><span>Photoshop</span></div>
             <div class="skillbar-bar" style="background: #218559;"></div>
             <div class="skill-bar-percent">75%</div>
           </div> <!-- End Skill Bar -->
 
           <div class="skillbar clearfix " data-percent="45%">
-            <div class="skillbar-title" style="background: #6840D4;"><span>AdobeDX</span></div>
+            <div class="skillbar-title" style="background: #6840D4;"><span>Rails</span></div>
             <div class="skillbar-bar" style="background: #6840D4;"></div>
             <div class="skill-bar-percent">45%</div>
           </div> <!-- End Skill Bar -->
 
           <div class="skillbar clearfix " data-percent="30%">
-            <div class="skillbar-title" style="background: #06A2CB;"><span>Blender</span></div>
+            <div class="skillbar-title" style="background: #06A2CB;"><span>jQuery</span></div>
             <div class="skillbar-bar" style="background: #06A2CB;"></div>
             <div class="skill-bar-percent">30%</div>
           </div> <!-- End Skill Bar -->
 
+          <div class="skillbar clearfix " data-percent="20%">
+            <div class="skillbar-title" style="background: #AB4DD2;"><span>PHP</span></div>
+            <div class="skillbar-bar" style="background: #AB4DD2;"></div>
+            <div class="skill-bar-percent">20%</div>
+          </div> <!-- End Skill Bar -->
         </div>
       </div>
     </div>
     <!-- end section -->
 
-    <!-- begin section -->
+     <!-- begin section -->
 
-    <div class="section" data-anchor="projects">
-      <div class="content-slide">
-        <div class="slide">
-          <h1 class="wow fadeInDown" data-wow-delay="0.2s">XFAIRE</h1>
-          <p class="wow fadeInDown" data-wow-delay="0.2s">Digital streaming service</p>
-          <img class="wow fadeInUp" data-wow-delay="0.2s" data-src="https://s3-us-west-2.amazonaws.com/bradengelhardt/assets/xfaire.jpg">
-        </div>
-        <div class="slide">
-          <h1>MACHETE ENERGY</h1>
-          <p>Energy drink website</p>
-          <img data-src="https://s3-us-west-2.amazonaws.com/bradengelhardt/assets/machete.jpg">
-        </div>
-        <div class="slide">
-          <h1>PORTFOLIO</h1>
-          <p>Mockup of a personal portfolio I was working on for a friend.</p>
-          <img data-src="https://s3-us-west-2.amazonaws.com/bradengelhardt/assets/cascioportfolio.jpg">
-        </div>
-        <div class="slide">
-          <h1>THATONEBLOG</h1>
-          <p>Minimalist blogging platform.</p>
-          <img data-src="https://s3-us-west-2.amazonaws.com/bradengelhardt/assets/blog.jpg">
-        </div>
-        <div class="slide">
-          <h1>PIXBORED</h1>
-          <p>Website for sharing images and gifs.</p>
-          <img data-src="https://s3-us-west-2.amazonaws.com/bradengelhardt/assets/pixbored.jpg">
-        </div>
-        <div class="slide">
-          <h1>PERSONAL WEBSITE</h1>
-          <p>Responsive vertical/horizontal header website theme.</p>
-          <img data-src="https://s3-us-west-2.amazonaws.com/bradengelhardt/assets/personalsite.jpg">
-        </div>
-      </div>
-    </div>
-    <!-- end section -->
 
-    <!-- begin section -->
+     <div class="section">
 
-    <div class="section" data-anchor="contact">
-      <div class="content wow fadeInDown" data-wow-delay="0.2s">
-       
-      </div>
-    </div>
-    <!-- end section -->
+        <section class="hero-section">
+            <div class="card-grid">
+              <a class="card" href="#">
+                <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1557187666-4fd70cf76254?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"></div>
+                <div class="card__content">
+                    <p class="card__category">Category</p>
+                    <h3 class="card__heading"> Logo Design</h3>
+                </div>
+              </a>
+              <a class="card" href="#">
+                <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1556680262-9990363a3e6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"></div>
+                <div class="card__content">
+                    <p class="card__category">Category</p>
+                    <h3 class="card__heading">Illustrations</h3>
+                </div>
+              </li>
+              <a class="card" href="#">
+                <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1557004396-66e4174d7bf6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"></div>
+                <div class="card__content">
+                    <p class="card__category">Category</p>
+                    <h3 class="card__heading">Other projects</h3>
+                </div>
+              </a>
+            <div>
+          </section>
+     </div>
+
+   
+     
+   <!-- end section -->
+
+
+  
 
     <!-- begin section -->
 
@@ -880,14 +1009,18 @@ label {
   </div>
   <!-- end fullpage -->
 </body>
-<script>
-  $(document).ready(function () {
+  <script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.min.js'></script>
+      <script id="rendered-js" >
+$(document).ready(function () {
   // typing animation
   (function ($) {
     $.fn.writeText = function (content) {
       var contentArray = content.split(""),
-        current = 0,
-        elem = this;
+      current = 0,
+      elem = this;
       setInterval(function () {
         if (current < contentArray.length) {
           elem.text(elem.text() + contentArray[current++]);
@@ -897,7 +1030,7 @@ label {
   })(jQuery);
 
   // input text for typing animation
-  $("#holder").writeText("UX/UI DESIGNER");
+  $("#holder").writeText("UX/UI DISIGNER");
 
   // initialize wow.js
   new WOW().init();
@@ -906,51 +1039,51 @@ label {
   var main = function () {
     $(".fa-bars").click(function () {
       $(".nav-screen").animate(
-        {
-          right: "0px"
-        },
-        200
-      );
+      {
+        right: "0px" },
+
+      200);
+
 
       $("body").animate(
-        {
-          right: "285px"
-        },
-        200
-      );
+      {
+        right: "285px" },
+
+      200);
+
     });
 
     // Then push them back */
     $(".fa-times").click(function () {
       $(".nav-screen").animate(
-        {
-          right: "-285px"
-        },
-        200
-      );
+      {
+        right: "-285px" },
+
+      200);
+
 
       $("body").animate(
-        {
-          right: "0px"
-        },
-        200
-      );
+      {
+        right: "0px" },
+
+      200);
+
     });
 
     $(".nav-links a").click(function () {
       $(".nav-screen").animate(
-        {
-          right: "-285px"
-        },
-        500
-      );
+      {
+        right: "-285px" },
+
+      500);
+
 
       $("body").animate(
-        {
-          right: "0px"
-        },
-        500
-      );
+      {
+        right: "0px" },
+
+      500);
+
     });
   };
 
@@ -962,8 +1095,8 @@ label {
     scrollBar: true,
     responsiveWidth: 400,
     navigation: true,
-    navigationTooltips: ["home", "about", "portfolio", "contact", "connect"],
-    anchors: ["home", "about", "portfolio", "contact", "connect"],
+    navigationTooltips: ["home", "about", "projects", "contact", "connect"],
+    anchors: ["home", "about", "projects", "contact", "connect"],
     menu: "#myMenu",
     fitToSection: false,
 
@@ -991,18 +1124,18 @@ label {
       if (index == 2) {
         /* animate skill bars */
         $(".skillbar").each(function () {
-          $(this)
-            .find(".skillbar-bar")
-            .animate(
-              {
-                width: $(this).attr("data-percent")
-              },
-              2500
-            );
+          $(this).
+          find(".skillbar-bar").
+          animate(
+          {
+            width: $(this).attr("data-percent") },
+
+          2500);
+
         });
       }
-    }
-  });
+    } });
+
 
   // move section down one
   $(document).on("click", "#moveDown", function () {
@@ -1026,21 +1159,21 @@ label {
   $(function () {
     $("a[href*=#]:not([href=#])").click(function () {
       if (
-        location.pathname.replace(/^\//, "") ==
-          this.pathname.replace(/^\//, "") &&
-        location.hostname == this.hostname
-      ) {
+      location.pathname.replace(/^\//, "") ==
+      this.pathname.replace(/^\//, "") &&
+      location.hostname == this.hostname)
+      {
         var target = $(this.hash);
-        target = target.length
-          ? target
-          : $("[name=" + this.hash.slice(1) + "]");
+        target = target.length ?
+        target :
+        $("[name=" + this.hash.slice(1) + "]");
         if (target.length) {
           $("html,body").animate(
-            {
-              scrollTop: target.offset().top
-            },
-            700
-          );
+          {
+            scrollTop: target.offset().top },
+
+          700);
+
           return false;
         }
       }
@@ -1067,42 +1200,40 @@ label {
       $.ajax({
         type: "POST",
         url: $(form).attr("action"),
-        data: formData
-      })
-        .done(function (response) {
-          // Make sure that the formMessages div has the 'success' class.
-          $(formMessages).removeClass("error");
-          $(formMessages).addClass("success");
+        data: formData }).
 
-          // Set the message text.
-          $(formMessages).text(response);
+      done(function (response) {
+        // Make sure that the formMessages div has the 'success' class.
+        $(formMessages).removeClass("error");
+        $(formMessages).addClass("success");
 
-          // Clear the form.
-          $("#name").val("");
-          $("#email").val("");
-          $("#message").val("");
-        })
-        .fail(function (data) {
-          // Make sure that the formMessages div has the 'error' class.
-          $(formMessages).removeClass("success");
-          $(formMessages).addClass("error");
+        // Set the message text.
+        $(formMessages).text(response);
 
-          // Set the message text.
-          if (data.responseText !== "") {
-            $(formMessages).text(data.responseText);
-          } else {
-            $(formMessages).text(
-              "Oops! An error occured and your message could not be sent."
-            );
-          }
-        });
+        // Clear the form.
+        $("#name").val("");
+        $("#email").val("");
+        $("#message").val("");
+      }).
+      fail(function (data) {
+        // Make sure that the formMessages div has the 'error' class.
+        $(formMessages).removeClass("success");
+        $(formMessages).addClass("error");
+
+        // Set the message text.
+        if (data.responseText !== "") {
+          $(formMessages).text(data.responseText);
+        } else {
+          $(formMessages).text(
+          "Oops! An error occured and your message could not be sent.");
+
+        }
+      });
     });
   });
 });
-</script>
-<script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.min.js'></script><script  src="./script.js"></script>
+//# sourceURL=pen.js
+    </script>
 
-</html>
+  
+</body>
