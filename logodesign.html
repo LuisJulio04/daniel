@@ -146,7 +146,7 @@ html, body {
   background: #8E2800;
   box-shadow: 3px 4px 3px #631c00;
 }
-.info-cards .info-card i img{
+.info-cards .info-card i{
   position: relative;
   top: 50%;
   left: 50%;
@@ -193,7 +193,14 @@ html, body {
         <h1>2DSM</h1>
       </div>
     </div>
-    <div class="info-card"><span class="exit">x</span><img src="logoyoikar.png" style="height: 100px; width: 100px;">
+    <div class="info-card"><span class="exit">x</span><img src="logoyoikar.png" style="height: 100px; width: 100px; position: relative;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -o-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);">
       <div class="info">
         <h1>CENZO</h1>
       </div>
