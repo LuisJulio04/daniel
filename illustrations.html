@@ -4,6 +4,11 @@
     <style>
         @import url('https://fonts.googleapis.com/css?family=Nunito');
 
+body{
+  padding: 0;
+  margin: 0;
+}
+
 article {
   max-width: 700px;
   margin: 0 auto;
@@ -54,9 +59,62 @@ article img {
   transition: opacity .3s;
 }
 
+.nav-header {
+    display: flex;
+    justify-content: space-between; /* Alinea los elementos al inicio y al final */
+    align-items: center; /* Centra verticalmente los elementos */
+}
+
+.header-links {
+  text-decoration: none;
+}
+
+.header-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-links ul li {
+  color: white;
+  display: inline;
+  float: right;
+  padding: 15px;
+  font-size: 16px;
+}
+
+.header-links a {
+  color: #757575;
+  -webkit-transition: all 0.2s ease-in;
+  text-decoration: none;
+}
+
+.header-links ul li:first-child {
+    margin-left: 0; /* Elimina el margen izquierdo del primer elemento */
+}
+
+
+
+
     </style>
     </head>
     <body>
+
+
+    
+
+      <div class="nav-header">
+        <div class="nav-brand">
+          <h1>Luis Daniel</h1>
+        </div>
+        <div class="header-links">
+          <ul>
+            <li data-menuanchor="secondPage"><a href="index.html">INICIO</a></li>
+          </ul>
+        </div>
+      </div>
+
+
         <article>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut rutrum mauris id nibh ultrices, vitae hendrerit nibh venenatis. Phasellus volutpat mauris in diam lacinia, sit amet blandit ante scelerisque. Mauris porttitor risus sit amet urna vestibulum porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer id diam sem. Nunc commodo, est sed efficitur condimentum, massa purus facilisis tellus, at commodo ex est a tellus. Morbi quis iaculis mi. Nam et iaculis sapien, at mattis ipsum.</p>
            <div>

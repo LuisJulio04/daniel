@@ -170,9 +170,60 @@ h1, h2, h3, h4, h5 {
 	color:#3f77bd;
 	border-bottom:1px solid #3f77bd;
 }
+
+
+.nav-header {
+    display: flex;
+    justify-content: space-between; /* Alinea los elementos al inicio y al final */
+    align-items: center; /* Centra verticalmente los elementos */
+	background: #282836;
+}
+
+.header-links {
+  text-decoration: none;
+}
+
+.header-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-links ul li {
+  color: white;
+  display: inline;
+  float: right;
+  padding: 15px;
+  font-size: 16px;
+}
+
+.header-links a {
+  color: #757575;
+  -webkit-transition: all 0.2s ease-in;
+  text-decoration: none;
+}
+
+.header-links ul li:first-child {
+    margin-left: 0; /* Elimina el margen izquierdo del primer elemento */
+}
+
     </style>
     </head>
     <body>
+
+
+		<div class="nav-header">
+			<div class="nav-brand">
+			  <h1>Luis Daniel</h1>
+			</div>
+			<div class="header-links">
+			  <ul>
+				<li data-menuanchor="secondPage"><a href="index.html">INICIO</a></li>
+			  </ul>
+			</div>
+		  </div>
+
+
         <div id="page_content">
             <div id="page_hero">
                 <div class="hero_wrap">
